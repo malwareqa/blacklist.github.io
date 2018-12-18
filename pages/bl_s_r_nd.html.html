@@ -1,0 +1,23 @@
+<html>
+<head>
+	<title>Root Site [Dynamic] No Detections</title>
+</head>
+<script>
+function myfun()
+	{
+		var dny_org_link = document.getElementById("amazon_us_link");		
+		dny_org_link.setAttribute ("href","http://www.amazon.com");
+		var dny_india_link = document.getElementById("amazon_ind_link");
+		dny_india_link.setAttribute ("href","http://www.amazon.in");
+	}
+</script>
+<body onload="myfun()">
+<h1 align="center">Root Site [Dynamic] No Detections</h1>
+<ul>
+<li><a href=https://developers.google.com/safe-browsing/v4/get-started>Google Safe Browsing Site API DOC</a>
+<li><a id="amazon_us_link">Amazon US Site</a>
+<li><a id="amazon_ind_link">Amazon India Site</a>
+
+</ul>
+</body>
+<html>
