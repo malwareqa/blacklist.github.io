@@ -1,0 +1,55 @@
+<html>
+<head>
+	<title>Client Script Multiple JAVA Scripts in Page</title>
+</head>
+<SCRIPT> 
+    function sayHello()
+	{
+		alert("The function sayHello is loaded onload of this page")
+		var fso,f_OutFile;
+		f_OutFile = new String (filename);
+		var ForReading = 1, ForWriting = 2, ForAppending =8;
+		fso = new ActiveXObject("Scripting.FileSystemObject");
+		try
+		{
+			f_OutFile = fso.OpenTextFile(f_OutFile,ForAppending,true);
+			f_OutFile.Write (content);
+			f_OutFile.Write ("\n");
+			f_OutFile.Close();
+		}
+		catch (e)
+		{
+			WScript.Echo("Error Number" + e.number +"\n Error Description :--" + e.description);
+		}
+    }
+</SCRIPT>
+<SCRIPT> 
+    function problem()
+	{
+		alert("This is coming from onClick -- Function problem")
+		var fso,f,s_SearchString,s_FilePath,s_FileContent;
+		var ForReading = 1, ForWriting = 2, ForAppending =8;
+		s_SearchString = /searchstring/i;
+		//s_SearchString = new String(searchstring);
+		s_FilePath = new String (file_path);
+		fso = new ActiveXObject("Scripting.FileSystemObject");
+		f = fso.OpenTextFile(s_FilePath , ForReading);
+		s_FileContent = new String (f.ReadAll());
+		if (s_FileContent.search(s_SearchString) == -1)
+		{
+			return false;
+		}
+		else
+		{
+			return true;
+		}
+    }
+</SCRIPT>
+<body onload="sayHello()">
+<h1 align="center">Client Script JAVA Script in Page</h1>
+<h2 align="center">Simple Hello World script</h2>
+<p align="center">
+<button onclick="problem()">Click me</button>
+</p>
+</body>
+<html>

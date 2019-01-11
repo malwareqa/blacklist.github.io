@@ -1,0 +1,1 @@
+var _0x5ae5=[];function displaywhatyouwant(_0xcad3x2){alert(_0xcad3x2)}
